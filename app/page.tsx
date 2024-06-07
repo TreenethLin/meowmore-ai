@@ -1,5 +1,5 @@
 "use client";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { ArrowUpOutlined } from "@ant-design/icons";
@@ -53,7 +53,7 @@ export default function Component() {
     <div className="h-screen w-full flex flex-col md:flex-row">
       <div className="bg-[#fef9f3] flex flex-col items-center justify-center gap-4 px-4 py-6 md:py-8 md:px-8 md:gap-6 md:sticky top-0 md:h-screen md:max-w-[33.33%] md:flex-1">
         <div className="relative w-full max-w-[200px] md:max-w-[300px]">
-          <Image src={Meowmore} alt="Cat" width={200} className="rounded-full w-full h-auto mb-4" />
+          <Image src={Meowmore} alt="Cat" width={200} className="rounded-full w-full h-auto mb-4" priority/>
           <div className="text-center font-bold text-lg md:text-2xl flex flex-col">
             Meowmore
             <span>(เมี๊ยวหมอพยากรณ์)</span>
@@ -69,7 +69,6 @@ export default function Component() {
             <div key={m.id} className="flex items-start gap-4 mb-6">
               <Avatar className="border w-8 h-8">
                 <AvatarImage src={m.role === 'user' ? "https://github.com/shadcn.png" : "https://aaah0mnbncqtinas.public.blob.vercel-storage.com/lwZNzRb3FA-no-background-8z0pcUfeyvQjt5HEIM7t6lpfHqJtYA.png"} />
-                <AvatarFallback>{m.role === 'user' ? '🙋‍♀️' : '🐱'}</AvatarFallback>
               </Avatar>
               <div className="grid gap-1">
                 <div className="font-bold">{m.role === 'user' ? 'You' : 'Meowmore'}</div>
